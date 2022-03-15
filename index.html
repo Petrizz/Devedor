@@ -11,14 +11,14 @@
     <hr>
     <form id="formulario" action="registrar.php" method="post">
 
-    <?php 
+  <!--  <?php 
     $timezone = new DateTimeZone('America/Sao_Paulo');
     $agora = new DateTime('now', $timezone);
     $agora->format('d/m/y H:i');
    ?>
 
     <input hidden class="form-control" id="dataHora" name="dataHora" value=" <?php echo $agora->format('d/m/Y H:i');?>" type="text">
-
+-->
         <div>
                 <label for="inicio">HorarioC</label>
                 <input class="" id="inicio" name="inicio" value="" type="time">
@@ -42,15 +42,15 @@
 
         </p>
 
-        <div class="row form-group">
-             <div class="col-md-6">
-                <button id= "calcular"type="submit" class="btn btn-success float-right" onclick="calcular()">Calcular</button>
-            </div>
-            <div class="col-md-6">
-                <button type="submit" class="btn btn-success float-right">Salvar</button>
-            </div>
+        <div class="row form-group" id="botao">
+            
+            
         </div>
     </form>
+    <div class="col-md-6" id="calcular">
+    <button id= "calcular" class="btn btn-success float-right" onclick="calcular()">Calcular</button>
+    </div>
+    
 
 </body>
 <script src="script.js"></script>
