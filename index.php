@@ -14,10 +14,10 @@
     <?php 
     $timezone = new DateTimeZone('America/Sao_Paulo');
     $agora = new DateTime('now', $timezone);
-    $agora->format('d/m/y H:i');
+    $agora->format('y-m-d H:i');
    ?>
 
-    <input hidden class="form-control" id="dataHora" name="dataHora" value=" <?php echo $agora->format('d/m/Y H:i');?>" type="text">
+    <input hidden class="form-control" id="dataHora" name="dataHora" value=" <?php echo $agora->format('y-m-d H:i');?>" type="text">
 
         <div>
                 <label for="inicio">HorarioC</label>
