@@ -47,3 +47,16 @@ function calcular() {
         alert("Preencha os campos corretamente!!")
     }
 }
+
+function mostrar() {
+   // var tabela = querySelector('div#tabela')
+    alert('entrou')
+    document.querySelector('img#img').remove()
+
+    window.location = "consultaJogatina.php";
+
+
+
+    
+
+}
