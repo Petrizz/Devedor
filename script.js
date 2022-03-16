@@ -15,7 +15,7 @@ function calcular() {
         var imin = Number(inicio.value.substr(3))//peguei apenas os minutos
 
         var totalhora = fhora - ihora
-        var totalmin
+        var totalmin = 0
 
 
         //não precisa calcular qdo for igual pq os minutos totais vao ser 0
@@ -27,17 +27,21 @@ function calcular() {
             totalmin = fmin - imin
         }
 
-        if (totalhora > 0) { //verificando se a pessoa preencheu horario final como se tivesse voltado no passado
+        if (totalhora >= 0 && totalmin >= 0 ) { //verificando se a pessoa preencheu horario final como se tivesse voltado no passado
 
+            if(!(totalhora == 0 && totalmin == 0)){
             var confirm = window.confirm(`Hoje você jogou ${totalhora} horas e ${totalmin} minutos\n Suas informações estão corretas?`);
 
             if (confirm == true) {
 
                 document.querySelector('div#calcular').remove()
 
-                botao.innerHTML = '<div class="col-md-6"><button type="submit" class="btn btn-success float-right">Salvar</button></div>'
+                botao.innerHTML = '<button type="submit" class="btn btn-info btn-lg btn-block">Salvar</button>'
 
             }
+             }else{
+                alert(`Você preencheu os 2 campos com os mesmos valores.\n ${final.value} e ${inicio.value}\nCorrige e calcula denovo!`)
+             }
 
         }else {
             alert(`Você não consegue voltar no tempo.\n ${final.value} vem antes de ${inicio.value}\nCorrige e calcula denovo!`)
@@ -53,10 +57,7 @@ function mostrar() {
     alert('entrou')
     document.querySelector('img#img').remove()
 
-    window.location = "consultaJogatina.php";
+    //window.location = "consultas/consulta";
 
-
-
-    
 
 }
