@@ -24,7 +24,7 @@
     echo ("Horas jogadas: " . $totalhora . "\nMinutos jogados: " . $totalmin);
 
 
-    $conexao = new PDO('mysql:host=localhost; dbname=devedor', 'root', '');
+ /*   $conexao = new PDO('mysql:host=localhost; dbname=devedor', 'root', '');
 
     //$sql = "SELECT * FROM clientes where idCliente = :idCliente ;";
 
@@ -43,5 +43,5 @@
 
     $conexao = null;
 
-    $registros = $sentenca->fetchAll();
+    $registros = $sentenca->fetchAll();*/
     ?>
