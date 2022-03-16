@@ -37,7 +37,8 @@ function calcular() {
                 document.querySelector('div#calcular').remove()
 
                 botao.innerHTML = '<button type="submit" class="btn btn-info btn-lg btn-block">Salvar</button>'
-
+                botao.innerHTML += `<input hidden class="form-control" id="totalhora" name="totalhora" value="${totalhora}" type="text">`
+                botao.innerHTML += `<input hidden  class="form-control" id="totalmin" name="totalmin" value="${totalmin}" type="text">`
             }
              }else{
                 alert(`Você preencheu os 2 campos com os mesmos valores.\n ${final.value} e ${inicio.value}\nCorrige e calcula denovo!`)

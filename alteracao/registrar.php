@@ -2,33 +2,15 @@
     $inicio = $_POST['inicio'];
     $final = $_POST['final'];
     $dataHora = $_POST['dataHora'];
-
-    $ihora = intval(substr($inicio, 0, -3));
-    $imin = intval(substr($inicio, 3));
-    $fhora = intval(substr($final, 0, -3));
-    $fmin = intval(substr($final, 3));
-
-    $totalmin = 0;
-    $totalhora = $fhora - $ihora;
+    $totalhora = $_POST['totalhora'];
+    $totalmin = $_POST['totalmin'];
 
 
-    if ($imin > $fmin) {
-        $totalmin = 60 - $imin;
-        $totalmin = $totalmin + $fmin;
-        $totalhora = $totalhora - 1;
-    }
-    if ($imin < $fmin) {
-        $totalmin = $fmin - $imin;
-    }
-
-    echo ("Horas jogadas: " . $totalhora . "\nMinutos jogados: " . $totalmin);
-
-
- /*   $conexao = new PDO('mysql:host=localhost; dbname=devedor', 'root', '');
+   $conexao = new PDO('mysql:host=localhost; dbname=devedor', 'root', '');
 
     //$sql = "SELECT * FROM clientes where idCliente = :idCliente ;";
 
-    $sql = "insert into jogatina(siteAberto, inicio, final, totalHoras, totalMin) values (:siteAberto, :inicio, :final, :totalHoras, :totalMin)";
+    $sql = "insert into jogatina(idUsuario,siteAberto, inicio, final, totalHoras, totalMin) values ( 1, :siteAberto, :inicio, :final, :totalHoras, :totalMin)";
 
 
     $sentenca = $conexao->prepare($sql);
@@ -43,5 +25,5 @@
 
     $conexao = null;
 
-    $registros = $sentenca->fetchAll();*/
+    $registros = $sentenca->fetchAll();
     ?>
